@@ -1,0 +1,24 @@
+live_loop :random_riff do
+  #  uncomment to bring in:
+  #synth :tb303, note: :e3, release: 4, cutoff: 130, amp: 0.25, pan:1
+  use_synth :pretty_bell
+  use_random_seed 45
+  notes = (scale :c2, :pelog, num_octaves: 2).shuffle.take(8)
+  16.times do
+    play notes.tick, release: rand(1.5),amp:2,  cutoff: rrand(100, 130) if one_in(2)
+    sleep 0.25
+  end
+end
+
+live_loop :drums do
+  use_random_seed 54
+  16.times do
+    sample :bd_haus, rate: 0.5, cutoff: 110 if rand < 0.45
+    sleep 0.25
+  end
+end
+
+live_loop :bd do
+  sample :bd_haus, cutoff: 111, amp: 2
+  sleep 0.5
+end
