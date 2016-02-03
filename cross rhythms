@@ -1,0 +1,21 @@
+use_synth :pretty_bell
+live_loop :haunted do
+
+  play 60,pan:-1
+  sleep 0.3
+  play 51,pan:1
+  sleep 0.15
+  play 57,pan:-0.5
+  sleep 0.15
+  play 48,pan:0.5
+  sleep 0.3
+  play 72,pan:-1
+  sleep 0.3
+  play 51,pan:1
+  sleep 0.45
+  play 57,pan:-0.5
+  sleep 0.15
+  play 48,pan:0.5
+  sleep 0.3
+end
+#use to isolate the two cross rhythms for live performance - vox or instr
